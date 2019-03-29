@@ -1,0 +1,493 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #4785fb;
+    --main-font-color: #464646;
+    --sub-font-color: #919291;
+    --border-style: 1px solid #dadcde;
+}
+
+body {
+    background-color: #f4f5f4;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/white-waves.png);
+}
+.mobi {
+    visibility: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    @media all and (max-width: 1200px) {
+        visibility: unset;
+    }
+}
+ul,ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 300;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-user-select: none;
+}
+
+button:focus {
+    outline: 0;
+}
+
+header {
+    padding-top: 2em;
+}
+.wrap { margin-top: 40px; }
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+header .logo{
+    width: 310px;
+    float: left;
+    padding: 10px;
+    position: relative;
+    img{width: 70px;}
+    .title {
+        position: absolute;
+        top: 18px;
+        margin-left: 20px;
+    }
+}
+
+
+header ul {
+    float: right;
+}
+
+header li {
+    float: left;
+    color: #000;
+    margin-left: 1.5em;
+    padding: 29px 0;
+    cursor: pointer;
+    position: relative;
+
+    & span {
+        opacity: 0.6;
+        margin-right: 5px;
+    }
+
+    &:last-child {
+        margin-right: 2em;
+    }
+
+    &.active::after{
+        content: "";
+        border-bottom: 3px solid #000;
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+        left: 0;
+    }
+
+
+}
+
+.swiper-container {
+    height: 720px;
+    margin-top: -2px;
+}
+
+.slider {
+    overflow: hidden;
+    background-color: white;
+    border-top-right-radius: 90px;
+
+    .slider-left {
+        height: 100%;
+        padding: 13% 4em;
+    }
+
+    h1 {
+        font-size: 46px;
+        font-weight: 400;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    h2 {
+        font-weight: 400;
+    }
+
+    button {
+        border: none;
+        margin-top: 2em;
+        background-color: #009bea;
+        color: white;
+        font-size: 16px;
+        padding: 15px 40px;
+        border-radius: 60px;
+        transition: 0.2s ease;
+        box-shadow: 0 2px 2px rgba(154, 154, 155, 0.75);
+        &:active{
+            transform: translateY(1px);
+        }
+        &:hover {
+            background-color: #008bea;
+            box-shadow: 0 7px 7px rgba(154, 154, 155, 0.75);
+            cursor: pointer;
+        }
+    }
+}
+.banner-layer{
+    background: linear-gradient(155deg, #0a8ac2, #032331);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    -webkit-mask-image: url(../asset/banner/1.png);
+    -webkit-mask-position: top right;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 71.5% 119%;
+}
+.banner {
+    position: absolute;
+    top: 0;
+    right: -1px;
+    -webkit-mask-image: url(../asset/banner/2.png);
+    -webkit-mask-position: top right;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 70% 100%;
+    z-index: 1;
+    img {
+        width: 100%;
+    }
+}
+
+.info {
+    background-color: #f5b924;
+    padding: 2em;
+    text-align: center;
+}
+
+.board {
+    padding: 2.5em 5em;
+    text-align: center;
+    width: 100%;
+    background-color: #f9faf9;
+    border-right: var(--border-style);
+    border-left: var(--border-style);
+}
+
+
+
+
+
+.two-col {
+    text-align: left;
+    display: flex;
+
+    .sidebar {
+        width: 200px;
+        li {
+            cursor: pointer;
+        }
+        ul > li {
+            margin: 20px 0 10px;
+            &::before{
+                content: " —— ";
+            }
+        }
+        ol > li {
+            margin-left: 30px;
+        }
+    }
+
+    .content-box {
+        flex: 1;
+        padding: 0px 40px;
+        hr{
+            height: 1px;
+            transform: scaleY(0.5);
+            transform-origin: 50% 100%;
+            margin: 60px 0;
+        }
+    
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            thead > tr {
+                background-color: #8a8a8a;
+                color: #ffffff;
+                text-align: center;
+            }
+            td{
+                padding: 5px 10px;
+                border: 1px solid #c7c7c7;
+    
+            }
+        }
+        .tags { 
+            display: inline;
+            & > span{
+                border-radius: 5px;
+                padding: 5px 30px;
+                margin-right: 10px;
+            }
+            .t0::before{
+                content: '競賽公告';
+            }
+            .t1::before{
+                content: '計畫公告';
+            }
+            .t2::before{
+                content: '補助公告';
+            }
+ 
+        }
+        .t0{
+            border: 1px solid #5FAED3;
+            color: #5FAED3;
+        }
+        .t1{
+            border: 1px solid #B5C12D;
+            color: #B5C12D;
+        }
+        .t2{
+            border: 1px solid #F5B924;
+            color: #F5B924;
+        }
+        .placard{
+            .press{
+                display: flex;
+                justify-content:space-between;
+                align-content: center;
+                margin: 20px 0;
+                .publish-time{
+                    text-align: right;
+                }
+                .publish-title{
+                    width: 400px;
+                    text-align: left;
+                    a:hover{text-decoration: underline;}
+                }
+            }
+
+        }
+
+    }
+}
+
+.one-col{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    .content-box{
+        width: 100%;
+        h3{
+            width: 100%;
+            display : inline-block;
+            overflow : hidden;
+            text-overflow : ellipsis;
+            white-space : nowrap;
+        }
+        ul.pagination {
+            display: inline-block;
+            padding: 0;
+            margin: 30px 0;
+            li{
+                display: inline;
+                a{
+                    color: black;
+                    border-radius: 3px;
+                    padding: 4px 12px;
+                    text-decoration: none;
+                    transition: background-color .3s;
+                    &.active{
+                        background-color: red;
+                        color: white;
+                    }
+                    &:hover:not(.active) {background-color: #ddd;}
+                }
+            }
+        }
+        
+        #cat-tags > span { 
+            cursor: pointer; 
+            transition: .3s;
+            &:hover{
+                box-shadow: 0 3px 3px rgba(154, 154, 155, 0.35);
+            }
+        }
+        .tags { 
+            & > span{
+                border-radius: 5px;
+                color: #fff;
+                padding: 5px 30px;
+                margin: 0 10px;
+            }
+            .t0::before{
+                content: '全部';
+            }
+            .t1::before{
+                content: '競賽';
+            }
+            .t2::before{
+                content: '課程';
+            }
+            .t3::before{
+                content: '演講';
+            }
+            .t4::before{
+                content: '研討會';
+            }
+        }
+        .t0{
+            background-color: red;
+        }
+        .t1{
+            background-color: #B5C12D;
+        }
+        .t2{
+            background-color: #F5B924;
+        }
+        .t3{
+            background-color: #5FAED3;
+        }
+        .t4{
+            background-color: #4E637E;
+        }
+        .cards{
+            margin-top: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: left;
+            .card{
+                cursor: pointer; 
+                width: 30.333333%;
+                margin: 10px 1.5% 30px;
+                border: 1px solid #e4e4e4;
+                padding: 20px 0 0 0;
+                transition: .3s;
+                &:hover{
+                    box-shadow: 0 7px 7px rgba(154, 154, 155, 0.75);
+                }
+                .card-info{
+                    background-color: #fff;
+                    padding: 20px;
+                    .heart{
+                        margin: 0 25px;
+                        cursor: pointer;
+                        position: relative;
+                    }
+                    .eye{
+                        margin: 0 25px;
+                        position: relative;
+                    }
+                    .heart::before{
+                        content: "";
+                        display: inline-block;
+                        top: 5px;
+                        left: -25px;
+                        position: absolute;
+                        background-size: 18px 18px;
+                        background-image: url("../asset/Cell/Heart.svg");
+                        width: 18px;
+                        height: 18px;
+                    }
+                    .eye::before{
+                        content: "";
+                        display: inline-block;
+                        top: 5px;
+                        left: -25px;
+                        position: absolute;
+                        background-size: 18px 18px;
+                        background-image: url("../asset/Cell/eye.svg");
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+                .tags{
+                    margin-bottom: 20px;
+                    span{
+                        margin: 0;
+                    }
+                }
+            }
+            .card > .fakeimg{
+                width: 100%;
+                height: 150px;
+                background-color: #000;
+            }
+        }
+
+
+        .news{
+            .press{
+                border: 1px solid #e4e4e4;
+                margin: 20px 0;
+                padding: 2em 0;
+                display: flex;
+                cursor: pointer;
+                &:hover{
+                    background-color: #e4e4e4;
+                }
+                .publish-time{
+                    margin: 0 40px;
+                }
+                .publish-title{
+                    text-align: left;
+                    padding-right: 4em;
+                }
+            }
+        }
+
+    }
+}
+
+.footer{
+    #cell-icons {
+        margin-top: 20px;
+    }
+    img{
+        height: 30px;
+        margin: 7px;
+        &:hover{
+            cursor: pointer;
+            box-shadow: 0 7px 7px rgba(154, 154, 155, 0.75);
+        }
+        &:active{
+            transform: translateY(1px);
+        }
+    }
+}
